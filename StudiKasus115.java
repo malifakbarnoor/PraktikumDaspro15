@@ -20,8 +20,27 @@
          totalHarga = jumlahCup * hargaPerCup;
          diskon = 0;
 
+         if (totalHarga>100000) {
+            diskon = totalHarga * 10 / 100;
+            
+            totalBayar = totalHarga - diskon;
+
+            System.out.print("--RINCIAN PEMBAYARAN--");
+            System.out.println("Total Harga : Rp" + totalHarga);
+            System.out.println("Diskon : Rp " + diskon);
+            System.out.println("Total Bayar : Rp" + totalBayar);
+
+            if (uangBayar >= totalBayar) {
+               Kembalian = uangBayar - totalBayar;
+               System.out.println("Kembalian : Rp" + Kembalian);
+            } else {
+               Kurang = totalBayar - uangBayar;
+               System.out.println("Uang tidak cukup, Kurang : Rp" + Kurang);
+            }
+         }
+         sc.close();
       }
-   }
+    }
  
     
 
